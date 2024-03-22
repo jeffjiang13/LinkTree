@@ -34,8 +34,8 @@ export default function HeroForm({user}) {
     <form
       onSubmit={handleSubmit}
       className="inline-flex items-center shadow-lg bg-white shadow-gray-500/20 rounded-md">
-          <span className="bg-white py-4 pl-4">
-            jj-linktree.vercel.app/
+          <span className="bg-white py-4 pl-4 rounded-md">
+            linktree.vercel.app/
           </span>
       <input
         type="text"
