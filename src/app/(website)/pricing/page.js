@@ -13,7 +13,7 @@ export default function Pricing() {
         <h1 className="text-center text-4xl font-bold text-gray-800 mb-10">Pricing Plans</h1>
         <div className="flex flex-wrap justify-center gap-10">
           {/* Free Plan */}
-          <div className="w-full max-w-sm p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <div className="w-full max-w-sm p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow bg-white">
             <h2 className="text-2xl font-semibold text-center mb-4">Free</h2>
             <ul className="mb-6">
               <li className="mb-2">Basic Link Management</li>

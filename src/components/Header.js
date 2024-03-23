@@ -4,6 +4,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
+import Image from 'next/image'
 
 export default async function Header() {
   const session = await getServerSession(authOptions);
@@ -12,8 +13,13 @@ export default async function Header() {
     <header className="bg-white border-b py-2">
       <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-blue-500 hover:text-blue-300 hover:underline">
-          <FontAwesomeIcon icon={faLink} className="text-blue-500" />
+        <Link href="/" className="flex items-center text-blue-500 hover:text-blue-300 hover:underline">
+        <Image
+            src={'/assets/logo.webp'}
+            alt="logo"
+            height={40}
+            width={40}
+          />
           <span className="font-extrabold text-2xl">LinkTree</span>
         </Link>
 

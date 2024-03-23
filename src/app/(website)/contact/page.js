@@ -2,17 +2,24 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image'
 
 export default function Contact() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center min-h-screen py-2">
       <Head>
         <title>Contact | Jeff Jiang</title>
         <meta name="description" content="Get in touch with Jeff Jiang" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-4 md:px-20 text-center">
+      <main className="flex flex-col items-center w-full flex-1 px-4 md:px-20 text-center">
+      <Image
+            src={'/assets/logo.webp'}
+            alt="banner image"
+            height={400}
+            width={400}
+          />
         <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-8">
           Get in Touch
         </h1>
