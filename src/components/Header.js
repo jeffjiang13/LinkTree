@@ -18,7 +18,7 @@ export default async function Header() {
         </Link>
 
         {/* Desktop Navigation Links - Centered */}
-        <nav className="hidden sm:flex justify-center gap-4 text-slate-500 text-sm flex-grow font-bold">
+        <nav className="hidden sm:flex justify-center gap-10 text-slate-500 text-sm flex-grow font-bold">
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/pricing" className="hover:underline">Pricing</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
@@ -29,7 +29,7 @@ export default async function Header() {
           {!!session ? (
             <>
               <Link
-                className="flex items-center gap-2 border p-2 px-4 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300"
+                className="flex items-center gap-2 border p-2 px-4 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300 font-bold"
                 href="/account"
               >
                 {/* {session?.user?.name} */}
@@ -39,7 +39,7 @@ export default async function Header() {
             </>
           ) : (
             <Link
-              className="flex items-center gap-2 border p-2 px-4 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300"
+              className="flex items-center gap-2 border p-2 px-4 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300 font-bold"
               href="/login"
             >
               Sign In
@@ -48,7 +48,7 @@ export default async function Header() {
         </div>
 
         {/* Mobile Navigation Links */}
-        <nav className="w-full sm:hidden flex justify-center gap-8 font-bold text-slate-500 text-sm mt-4">
+        <nav className="w-full sm:hidden flex justify-center gap-10 font-bold text-slate-500 text-sm mt-4">
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/pricing" className="hover:underline">Pricing</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
