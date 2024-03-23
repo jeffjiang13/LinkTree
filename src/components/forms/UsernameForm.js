@@ -35,8 +35,8 @@ export default function UsernameForm({desiredUsername}) {
             This username is taken
           </div>
         )}
-        <SubmitButton className="rounded-md">
-          <span >Claim your username</span>
+        <SubmitButton>
+          <span>Claim your username</span>
           <RightIcon />
         </SubmitButton>
       </div>

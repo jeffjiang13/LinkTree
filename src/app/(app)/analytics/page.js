@@ -34,7 +34,7 @@ export default async function AnalyticsPage() {
   if (!page) {
     // Handle the case where the page is not found. This could be a redirect or a simple message.
     // For example, redirecting back to the homepage or to a dashboard:
-    return redirect("/dashboard");
+    return redirect("/account");
     // Or, if you're rendering on the server and sending back HTML:
     // return {props: {error: "Page not found"}};
   }
@@ -64,8 +64,8 @@ export default async function AnalyticsPage() {
   ]);
 
   const clicks = await Event.find({
-    page: page.uri,
     type: "click",
+    page: page.uri,
   });
 
   return (
