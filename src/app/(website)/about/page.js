@@ -25,7 +25,7 @@ export default function About() {
             <li>Simple and secure authentication process.</li>
             <li>Intuitive dashboard for managing your links and profile.</li>
             <li>Customizable link buttons with real-time previews.</li>
-            <li>Analytics to gain insights into your  audience&apos;s engagement.</li>
+            <li>Analytics to gain insights into your audience&apos;s engagement.</li>
             <li>Optimized for performance and SEO, ensuring your page stands out.</li>
           </ul>
         </div>
