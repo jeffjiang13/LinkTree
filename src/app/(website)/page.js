@@ -7,12 +7,12 @@ export default async function Home() {
   return (
     <main>
       <section className="pt-32">
-        <div className="max-w-md mb-8">
+        <div className="max-w-6xl mb-8">
           <h1 className="text-6xl font-bold">
-            Your one link<br />for everything
+            Everything in one
           </h1>
           <h2 className="text-gray-500 text-xl mt-6">
-            Share your links, social profiles, contact info and more on one page
+            Share your links, social media profiles, contact info and more on one page
           </h2>
         </div>
         <HeroForm user={session?.user} />
