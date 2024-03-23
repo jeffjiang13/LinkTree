@@ -9,8 +9,8 @@ export default function Pricing() {
         <meta name="description" content="Explore pricing options for Linklist." />
       </Head>
 
-      <main className="max-w-6xl mx-auto">
-        <h1 className="text-center text-4xl font-bold text-gray-800 mb-10">Pricing Plans</h1>
+      <main className="max-w-6xl mb-20 mx-auto">
+        <h1 className="text-center text-4xl font-bold text-gray-800 mb-20">Pricing Plans</h1>
         <div className="flex flex-wrap justify-center gap-10">
           {/* Free Plan */}
           <div className="w-full max-w-sm p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow bg-white">

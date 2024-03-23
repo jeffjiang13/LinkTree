@@ -162,7 +162,7 @@ export default async function UserPage({ params }) {
             <div className="flex items-center justify-center shrink grow-0 overflow-hidden">
               <div>
                 <h3>{link.title}</h3>
-                <p className="text-white h-2 overflow-hidden">
+                <p className="text-sm text-gray-400 overflow-hidden">
                   {link.subtitle}
                 </p>
               </div>
