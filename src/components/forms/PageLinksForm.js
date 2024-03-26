@@ -24,7 +24,7 @@ export default function PageLinksForm({ page, user }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsIconLoading(false);
-    }, 2000); // Adjust the delay as needed
+    }, 1000); // Adjust the delay as needed
 
     return () => clearTimeout(timeoutId);
   }, []);
