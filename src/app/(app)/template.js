@@ -35,7 +35,6 @@ export default async function AppTemplate({ children, ...rest }) {
     <main className="md:flex min-h-screen">
       <label htmlFor="navCb" className="md:hidden ml-8 mt-4 p-4 rounded-md bg-white shadow inline-flex items-center gap-2 cursor-pointer">
         <FontAwesomeIcon icon={faBars} />
-        <span>Open navigation</span>
       </label>
       <input id="navCb" type="checkbox" className="hidden" />
       <label htmlFor="navCb" className="hidden backdrop fixed inset-0 bg-black/80 z-10"></label>
@@ -49,8 +48,12 @@ export default async function AppTemplate({ children, ...rest }) {
               target="_blank"
               href={'/'+page.uri}
               className="text-center mt-4 flex gap-1 items-center justify-center">
-              <FontAwesomeIcon size="lg" icon={faLink} className="text-blue-500" />
-              <span className="text-xl text-gray-300">/</span>
+<Image
+            src={'/assets/logo.webp'}
+            alt="logo"
+            height={40}
+            width={40}
+          />              <span className="text-xl text-gray-300">/</span>
               <span className="hover:underline">{page.uri}</span>
             </Link>
           )}
