@@ -13,16 +13,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { ReactSortable } from "react-sortablejs";
 
 export default function PageLinksForm({ page, user }) {
   const [links, setLinks] = useState(page.links || []);
+  const [isIconLoading, setIsIconLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsIconLoading(false);
+    }, 2000); // Adjust the delay as needed
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   async function save() {
     await savePageLinks(links);
     toast.success("Saved!");
   }
+
   function addNewLink() {
     setLinks((prev) => {
       return [
@@ -37,6 +48,7 @@ export default function PageLinksForm({ page, user }) {
       ];
     });
   }
+
   function handleUpload(ev, linkKeyForUpload) {
     upload(ev, (uploadedImageUrl) => {
       setLinks((prevLinks) => {
@@ -50,6 +62,7 @@ export default function PageLinksForm({ page, user }) {
       });
     });
   }
+
   function handleLinkChange(keyOfLinkToChange, prop, ev) {
     setLinks((prev) => {
       const newLinks = [...prev];
@@ -58,14 +71,16 @@ export default function PageLinksForm({ page, user }) {
           link[prop] = ev.target.value;
         }
       });
-      return [...prev];
+      return newLinks;
     });
   }
+
   function removeLink(linkKeyToRemove) {
     setLinks((prevLinks) =>
       [...prevLinks].filter((l) => l.key !== linkKeyToRemove)
     );
   }
+
   return (
     <SectionBox>
       <form action={save}>
@@ -102,7 +117,11 @@ export default function PageLinksForm({ page, user }) {
                         height={64}
                       />
                     )}
-                    {!l.icon && <FontAwesomeIcon size="xl" icon={faLink} />}
+                    {!l.icon && (isIconLoading ? (
+                      <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                    ) : (
+                      <FontAwesomeIcon size="xl" icon={faLink} />
+                    ))}
                   </div>
                   <div>
                     <input
@@ -115,7 +134,11 @@ export default function PageLinksForm({ page, user }) {
                       htmlFor={"icon" + l.key}
                       className="border mt-2 p-2 flex items-center gap-1 text-gray-600 cursor-pointer mb-2 justify-center rounded-md hover:bg-gray-200 hover:text-gray-800"
                     >
-                      <FontAwesomeIcon icon={faCloudArrowUp} />
+                      {isIconLoading ? (
+                        <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                      ) : (
+                        <FontAwesomeIcon icon={faCloudArrowUp} />
+                      )}
                       <span>Change icon</span>
                     </label>
                     <button
@@ -123,7 +146,11 @@ export default function PageLinksForm({ page, user }) {
                       type="button"
                       className="w-full bg-gray-300 py-2 px-3 mb-2 h-full flex gap-2 items-center justify-center rounded-md hover:bg-red-500 hover:text-white cursor-pointer"
                     >
-                      <FontAwesomeIcon icon={faTrash} />
+                      {isIconLoading ? (
+                        <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                      ) : (
+                        <FontAwesomeIcon icon={faTrash} />
+                      )}
                       <span>Remove this link</span>
                     </button>
                   </div>
@@ -160,7 +187,11 @@ export default function PageLinksForm({ page, user }) {
         </div>
         <div className="border-t pt-4 mt-8 max-w-xs mx-auto">
           <SubmitButton className="">
-            <FontAwesomeIcon icon={faSave} />
+            {isIconLoading ? (
+              <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+            ) : (
+              <FontAwesomeIcon icon={faSave} />
+            )}
             <span>Save</span>
           </SubmitButton>
         </div>

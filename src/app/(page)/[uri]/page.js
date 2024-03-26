@@ -54,33 +54,41 @@ export default async function UserPage({ params }) {
   // Check if the page was not found
   if (!page) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        flexDirection: 'column',
-      }}>
-        <p style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'center' }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          flexDirection: "column",
+        }}
+      >
+        <p
+          style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}
+        >
           Page Not Found
         </p>
       </div>
     );
   }
 
-  const user = await User.findOne({email: page.owner});
+  const user = await User.findOne({ email: page.owner });
 
   // Optionally, also check if the user was not found
   if (!user) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        flexDirection: 'column',
-      }}>
-        <p style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'center' }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          flexDirection: "column",
+        }}
+      >
+        <p
+          style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}
+        >
           User Not Found
         </p>
       </div>
@@ -128,7 +136,7 @@ export default async function UserPage({ params }) {
           </Link>
         ))}
       </div>
-      <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-6 p-4 px-8">
+      <div className="max-w-2xl mx-auto grid md:grid-cols-1 gap-6 p-4 px-8">
         {page.links.map((link) => (
           <Link
             key={link.url}
@@ -143,7 +151,7 @@ export default async function UserPage({ params }) {
             className="bg-white p-2 flex hover:bg-gray-100 rounded-md font-extrabold border-2 border-gray-300"
             href={link.url}
           >
-            <div className="relative -left-6 overflow-hidden w-16">
+            <div className="relative -left-7 w-18">
               <div className="w-16 h-16 bg-blue-200 aspect-square relative flex items-center justify-center rounded-full border-2 border-gray-300">
                 {link.icon && (
                   <Image
@@ -160,8 +168,8 @@ export default async function UserPage({ params }) {
               </div>
             </div>
             <div className="flex items-center justify-center shrink grow-0 overflow-hidden">
-              <div>
-                <h3>{link.title}</h3>
+              <div className="">
+                <h3 className="">{link.title}</h3>
                 <p className="text-sm text-gray-400 overflow-hidden">
                   {link.subtitle}
                 </p>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 mt-10">
       <Head>
         <title>About | LinkTree</title>
         <meta name="description" content="A Linktree clone for managing your online presence." />

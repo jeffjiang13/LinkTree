@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
 export default function PageSettingsForm({ page, user }) {
@@ -21,6 +21,16 @@ export default function PageSettingsForm({ page, user }) {
   const [bgColor, setBgColor] = useState(page.bgColor);
   const [bgImage, setBgImage] = useState(page.bgImage);
   const [avatar, setAvatar] = useState(user?.image);
+  const [isIconLoading, setIsIconLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsIconLoading(false);
+    }, 2000); // Adjust the delay as needed
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   async function saveBaseSettings(formData) {
     const result = await savePageSettings(formData);
     if (result) {
@@ -55,8 +65,24 @@ export default function PageSettingsForm({ page, user }) {
                 className="rounded-md"
                 defaultValue={page.bgType}
                 options={[
-                  { value: "color", icon: faPalette, label: "Color" },
-                  { value: "image", icon: faImage, label: "Image" },
+                  {
+                    value: "color",
+                    icon: isIconLoading ? (
+                      <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                    ) : (
+                      <FontAwesomeIcon icon={faPalette} />
+                    ),
+                    label: "Color",
+                  },
+                  {
+                    value: "image",
+                    icon: isIconLoading ? (
+                      <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                    ) : (
+                      <FontAwesomeIcon icon={faImage} />
+                    ),
+                    label: "Image",
+                  },
                 ]}
                 onChange={(val) => setBgType(val)}
               />
@@ -83,10 +109,14 @@ export default function PageSettingsForm({ page, user }) {
                       className="hidden"
                     />
                     <div className="flex gap-2 items-center cursor-pointer">
-                      <FontAwesomeIcon
-                        icon={faCloudArrowUp}
-                        className="text-gray-700"
-                      />
+                      {isIconLoading ? (
+                        <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                      ) : (
+                        <FontAwesomeIcon
+                          icon={faCloudArrowUp}
+                          className="text-gray-700"
+                        />
+                      )}
                       <span>Change image</span>
                     </div>
                   </label>
@@ -109,7 +139,11 @@ export default function PageSettingsForm({ page, user }) {
                 htmlFor="avatarIn"
                 className="absolute bottom-0 -right-2 bg-white p-2 rounded-full shadow shadow-black/50 aspect-square flex items-center cursor-pointer hover:bg-gray-200"
               >
-                <FontAwesomeIcon size={"xl"} icon={faCloudArrowUp} />
+                {isIconLoading ? (
+                  <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                ) : (
+                  <FontAwesomeIcon size={"xl"} icon={faCloudArrowUp} />
+                )}
               </label>
               <input
                 onChange={handleAvatarImageChange}
@@ -156,7 +190,11 @@ export default function PageSettingsForm({ page, user }) {
             />
             <div className="max-w-[200px] mx-auto mt-8 max-w-xs">
               <SubmitButton>
-                <FontAwesomeIcon icon={faSave} />
+                {isIconLoading ? (
+                  <div className="animate-pulse bg-gray-400 w-4 h-4 rounded-full" />
+                ) : (
+                  <FontAwesomeIcon icon={faSave} />
+                )}
                 <span>Save</span>
               </SubmitButton>
             </div>

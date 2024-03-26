@@ -1,8 +1,15 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import HeroForm from "@/components/forms/HeroForm";
 import { getServerSession } from "next-auth";
-import Image from 'next/image';
-
+import Carousel from "@/components/Carousel";
+const imageUrls = [
+  '/assets/polly.png',
+  '/assets/preview.png',
+  '/assets/doggie.png',
+  '/assets/manfred.png',
+  '/assets/walter.png',
+  // Add more images as needed
+];
 export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
@@ -17,14 +24,15 @@ export default async function Home() {
           </h2>
           <HeroForm user={session?.user} />
         </div>
+        <Carousel images={imageUrls} />
 
-        <Image
+        {/* <Image
           src={'/assets/preview.png'}
           alt="banner image"
           width={290} // Adjust the width as needed
           height={290} // Adjust the height to maintain the aspect ratio
-          className="rounded-2xl border-2 border-muted"
-        />
+          className="rounded-2xl border-2 shadow-gray-500/20 shadow-lg hover:shadow-2xl transition-shadow"
+        /> */}
       </section>
     </main>
   );
