@@ -45,7 +45,7 @@ export default function PageButtonsForm({ user, page }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsIconLoading(false);
-    }, 1000); // Adjust the delay as needed
+    }, 500); // Adjust the delay as needed
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -81,9 +81,13 @@ export default function PageButtonsForm({ user, page }) {
           {activeButtons.map(b => (
             <div key={b.key} className="mb-4 md:flex items-center">
               <div className="w-56 flex h-full text-gray-700 p-2 gap-2 items-center">
+              {isIconLoading ? (
+                  <div className="animate-pulse bg-gray-300 w-4 h-4 rounded-full" />
+                ) : (
                 <FontAwesomeIcon
                   icon={faGripLines}
                   className="cursor-pointer text-gray-400 handle p-2" />
+                )}
                 {isIconLoading ? (
                   <div className="animate-pulse bg-gray-300 w-4 h-4 rounded-full" />
                 ) : (

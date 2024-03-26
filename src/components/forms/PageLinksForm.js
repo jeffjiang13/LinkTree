@@ -24,7 +24,7 @@ export default function PageLinksForm({ page, user }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsIconLoading(false);
-    }, 1000); // Adjust the delay as needed
+    }, 500); // Adjust the delay as needed
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -90,10 +90,14 @@ export default function PageLinksForm({ page, user }) {
           type="button"
           className="text-blue-500 text-lg flex gap-2 items-center cursor-pointer"
         >
+          {isIconLoading ? (
+                  <div className="animate-pulse bg-gray-300 w-4 h-4 rounded-full" />
+                ) : (
           <FontAwesomeIcon
             className="bg-blue-500 text-white p-1 rounded-full aspect-square"
             icon={faPlus}
           />
+          )}
           <span>Add new</span>
         </button>
         <div className="">
@@ -101,10 +105,14 @@ export default function PageLinksForm({ page, user }) {
             {links.map((l) => (
               <div key={l.key} className="mt-8 md:flex gap-6 items-center">
                 <div className="handle">
+                {isIconLoading ? (
+                  <div className="animate-pulse bg-gray-300 w-4 h-4 rounded-full" />
+                ) : (
                   <FontAwesomeIcon
                     className="text-gray-500 mr-2 cursor-ns-resize"
                     icon={faGripLines}
                   />
+                )}
                 </div>
                 <div className="text-center">
                   <div className="bg-gray-300 relative aspect-square overflow-hidden w-16 h-16 inline-flex justify-center items-center rounded-full">
