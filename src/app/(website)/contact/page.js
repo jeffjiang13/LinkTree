@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image'
+import { faBriefcase, faFolder, faFile } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   return (
@@ -37,8 +38,8 @@ export default function Contact() {
           <a href="https://www.linkedin.com/in/jeffjiang13/" className="hover:text-blue-500" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
-          <a href="https://jeff-jiang.com" className="text-xl hover:underline" target="_blank" rel="noopener noreferrer">
-            Portfolio
+          <a href="https://jeff-jiang.com" className=" hover:text-red-500" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faBriefcase} size="2x" />
           </a>
         </div>
       </main>
