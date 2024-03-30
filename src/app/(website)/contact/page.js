@@ -5,15 +5,13 @@ import { faTwitter, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-b
 import Image from 'next/image'
 import { faBriefcase, faFolder, faFile } from '@fortawesome/free-solid-svg-icons';
 
+export const metadata = {
+  title: 'LinkTree | Contact',
+  description: 'Share your links, social profiles, contact info and more on one page',
+}
 export default function Contact() {
   return (
     <div className="flex flex-col items-center min-h-screen py-2">
-      <Head>
-        <title>Contact | Jeff Jiang</title>
-        <meta name="description" content="Get in touch with Jeff Jiang" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="flex flex-col items-center w-full flex-1 px-4 md:px-20 text-center">
       <Image
             src={'/assets/logo.webp'}

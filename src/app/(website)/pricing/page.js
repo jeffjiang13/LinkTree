@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'LinkTree | Pricing',
+  description: 'Share your links, social profiles, contact info and more on one page',
+}
+
 export default function Pricing() {
   return (
     <div className="py-8 px-4">
-      <Head>
-        <title>Pricing | LinkTree</title>
-        <meta name="description" content="Explore pricing options for Linklist." />
-      </Head>
-
       <main className="max-w-6xl mb-20 mx-auto mt-10">
         <h1 className="text-center text-4xl font-bold text-gray-800 mb-20">Pricing Plans</h1>
         <div className="flex flex-wrap justify-center gap-10">

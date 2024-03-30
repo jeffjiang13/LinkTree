@@ -1,15 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'LinkTree | About',
+  description: 'Share your links, social profiles, contact info and more on one page',
+}
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 mt-10">
-      <Head>
-        <title>About | LinkTree</title>
-        <meta name="description" content="A Linktree clone for managing your online presence." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="flex flex-col items-center w-full flex-1 px-4 md:px-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-800">
           About <span className="text-blue-500">LinkTree</span>
