@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { faBriefcase, faFolder, faFile } from '@fortawesome/free-solid-svg-icons';
 
 export const metadata = {
-  title: 'LinkTree | Contact',
+  title: 'LinkTree Clone | Contact',
   description: 'Share your links, social profiles, contact info and more on one page',
 }
 export default function Contact() {

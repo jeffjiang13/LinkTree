@@ -1,7 +1,7 @@
 import LoginWithGoogle from "@/components/buttons/LoginWithGoogle";
 
 export const metadata = {
-  title: 'LinkTree | Login',
+  title: 'LinkTree Clone | Login',
   description: 'Share your links, social profiles, contact info and more on one page',
 }
 export default function LoginPage() {
