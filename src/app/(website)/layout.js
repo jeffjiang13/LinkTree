@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata = {
-  title: 'LinkTree Clone',
+  title: 'LinkTri Clone',
   description: 'Share your links, social profiles, contact info and more on one page',
 }
 

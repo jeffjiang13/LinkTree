@@ -20,7 +20,7 @@ import {
 } from "recharts";
 
 export const metadata = {
-  title: "LinkTree Clone | Analytics",
+  title: "LinkTri Clone | Analytics",
   description:
     "Share your links, social profiles, contact info and more on one page",
 };

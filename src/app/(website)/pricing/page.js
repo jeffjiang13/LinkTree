@@ -1,16 +1,19 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
 export const metadata = {
-  title: 'LinkTree Clone | Pricing',
-  description: 'Share your links, social profiles, contact info and more on one page',
-}
+  title: "LinkTri Clone | Pricing",
+  description:
+    "Share your links, social profiles, contact info and more on one page",
+};
 
 export default function Pricing() {
   return (
     <div className="py-8 px-4">
       <main className="max-w-6xl mb-20 mx-auto mt-10">
-        <h1 className="text-center text-4xl font-bold text-gray-800 mb-20">Pricing Plans</h1>
+        <h1 className="text-center text-4xl font-bold text-gray-800 mb-20">
+          Pricing Plans
+        </h1>
         <div className="flex flex-wrap justify-center gap-10">
           {/* Free Plan */}
           <div className="w-full max-w-sm p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow bg-white">
@@ -21,8 +24,11 @@ export default function Pricing() {
               <li className="mb-2">Basic Analytics</li>
             </ul>
             <div className="text-center">
-              <Link href="/account"
-                className="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-200 transition-colors">Get Started
+              <Link
+                href="/account"
+                className="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-200 transition-colors"
+              >
+                Get Started
               </Link>
             </div>
           </div>

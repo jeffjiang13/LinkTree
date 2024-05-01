@@ -9,7 +9,7 @@ import {getServerSession} from "next-auth";
 import {redirect} from "next/navigation";
 import cloneDeep from 'clone-deep';
 export const metadata = {
-  title: 'LinkTree Clone | Account',
+  title: 'LinkTri Clone | Account',
   description: 'Share your links, social profiles, contact info and more on one page',
 }
 export default async function AccountPage({searchParams}) {

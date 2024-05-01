@@ -15,7 +15,7 @@ export default function Footer() {
             height={40}
             width={40}
           />
-          <span className="font-extrabold text-2xl">LinkTree</span>
+          <span className="font-extrabold text-2xl">LinkTri</span>
         </div>
 
 
@@ -42,7 +42,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="w-full text-center text-sm text-gray-500 mt-4">
-          © {new Date().getFullYear()} LinkTree Clone. All rights reserved.
+          © {new Date().getFullYear()} LinkTri Clone. All rights reserved.
         </div>
       </div>
     </footer>

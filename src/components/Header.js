@@ -20,7 +20,7 @@ export default async function Header() {
             height={40}
             width={40}
           />
-          <span className="font-extrabold text-2xl">LinkTree</span>
+          <span className="font-extrabold text-2xl">LinkTri</span>
         </Link>
 
         {/* Desktop Navigation Links - Centered */}
