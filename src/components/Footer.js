@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { FaTwitter, FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -18,25 +17,23 @@ export default function Footer() {
           <span className="font-extrabold text-2xl">LinkTri</span>
         </div>
 
-
         {/* Social Media Icons */}
         <div className="flex items-center gap-4">
           <Link href="https://twitter.com/jeffjiang9"
             target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-300">
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
+            <FaTwitter size="1.5em" />
           </Link>
           <Link href="https://www.facebook.com/jeff.jiang.9"
             target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-300">
-              <FontAwesomeIcon icon={faFacebookF} size="lg" />
+            <FaFacebookF size="1.5em" />
           </Link>
           <Link href="https://github.com/jeffjiang13"
             target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-500">
-              <FontAwesomeIcon icon={faGithub} size="lg" />
-
+            <FaGithub size="1.5em"/>
           </Link>
           <Link href="https://www.linkedin.com/in/jeffjiang13/"
             target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-300">
-              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+            <FaLinkedinIn size="1.5em" />
           </Link>
         </div>
 
