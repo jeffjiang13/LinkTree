@@ -1,6 +1,15 @@
+<div align="center" id="top" className="mb-10">
+<img src="./public/assets/logo.webp" alt="icon" width="150" height="150" />
 
+&#xa0;
 
-# Fullstack Linktree Clone
+  <img src="./public/banner.png" alt="preview" />
+
+<a href="https://jj-linktri.vercel.app/">Demo</a>
+
+</div>
+
+# Fullstack Linktri Clone
 
 This project is a fullstack clone of Linktree built with Next.js, Tailwind CSS, and MongoDB. It allows users to create a personalized page with links to their content across the internet, customize their profile, and view analytics on their links.
 
