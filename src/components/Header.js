@@ -1,10 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import LogoutButton from "@/components/buttons/LogoutButton";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from 'next/image';
+import HamburgerMenu from "@/components/HamburgerMenu"; // Import the HamburgerMenu component
 
 export default async function Header() {
   const session = await getServerSession(authOptions);
@@ -14,7 +13,7 @@ export default async function Header() {
       <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center text-blue-500 hover:text-blue-300 hover:underline">
-        <Image
+          <Image
             src={'/assets/logo.webp'}
             alt="logo"
             height={40}
@@ -30,15 +29,14 @@ export default async function Header() {
           <Link href="/contact" className="hover:underline">Contact</Link>
         </nav>
 
-        {/* Session/Login Buttons */}
-        <div className="flex items-center gap-4 text-sm text-slate-500">
+        {/* Session/Login Buttons for Desktop */}
+        <div className="hidden sm:flex items-center gap-4 text-sm text-slate-500">
           {!!session ? (
             <>
               <Link
                 className="flex items-center gap-2 border p-2 px-4 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300 font-bold"
                 href="/account"
               >
-                {/* {session?.user?.name} */}
                 Account
               </Link>
               <LogoutButton />
@@ -49,16 +47,19 @@ export default async function Header() {
               href="/login"
             >
               Sign In
-              </Link>
+            </Link>
           )}
         </div>
 
-        {/* Mobile Navigation Links */}
-        <nav className="w-full sm:hidden flex justify-center gap-10 font-bold text-slate-500 text-sm mt-4">
+        {/* Hamburger Menu for Mobile */}
+        <HamburgerMenu session={session} />
+
+        {/* Mobile Navigation Links (Hidden when Hamburger Menu is used) */}
+        {/* <nav className="w-full sm:hidden flex justify-center gap-10 font-bold text-slate-500 text-sm mt-4">
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/pricing" className="hover:underline">Pricing</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
-        </nav>
+        </nav> */}
       </div>
     </header>
   );
