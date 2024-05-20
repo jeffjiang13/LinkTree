@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import Carousel from "@/components/Carousel";
 import GridContainer from "@/components/GridContainer";
 import Link from "next/link";
-import ImageGrid from "@/components/ImageGrid"; // Import the ImageGrid component
+import ImageGrid from "@/components/ImageGrid";
 
 const imageUrls = [
   "/assets/polly.png",
@@ -16,8 +16,6 @@ const imageUrls = [
   "/assets/cat.png",
   "/assets/model1.png",
 
-
-  // Add more images as needed
 ];
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -49,7 +47,7 @@ export default async function Home() {
         <p>
           Back in 2016 LinkTri solved social media’s most annoying problem: only
           having one link in your bio. LinkTri was the first ‘link in bio’
-          platform made to solve this problem. Linktree has since become so much
+          platform made to solve this problem. LinkTri has since become so much
           more. Allowing businesses or creators to get more out of their social
           media, grow their following, easily take payments and take back
           control of how your content is discovered.

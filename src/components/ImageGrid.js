@@ -8,7 +8,7 @@ const ImageGrid = ({ images }) => {
           <img
             src={image}
             alt={`image-${index}`}
-            className="w-full h-auto rounded-md border shadow-lg"
+            className="w-full h-auto rounded-md border hover:scale-105 shadow-lg"
           />
         </div>
       ))}
